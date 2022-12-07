@@ -7,8 +7,12 @@ import ManufacturerList from './ManufacturerList';
 import VehicleModelList from './VehicleModelsList';
 import AutoForm from './AutoForm';
 import AutoList from './AutoList';
+import TechnicianForm from './TechnicianForm';
+import AppointmentForm from './AppointmentForm';
+import AppointmentList from './AppointmentList';
 
-function App(props) {
+
+function App() {
 
   return (
     <BrowserRouter>
@@ -16,12 +20,15 @@ function App(props) {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="manufacturer" element={<ManufacturerList manufacturers={props.manufacturers}/>} />
+          <Route path="manufacturer" element={<ManufacturerList />} />
           <Route path="manufacturer/new" element={<ManufacturerForm />} />
           <Route path="vehicle/new" element={<VehicleModelForm />} />
           <Route path="vehicle/" element={<VehicleModelList />} />
           <Route path="automobiles/new" element={<AutoForm />} />
           <Route path="automobiles" element={<AutoList />} />
+          <Route path="technician/new" element={<TechnicianForm />} />
+          <Route path="appointment/new" element={<AppointmentForm />} />
+          <Route path="appointment" element={<AppointmentList />} />
         </Routes>
       </div>
     </BrowserRouter>

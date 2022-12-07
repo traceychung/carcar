@@ -13,7 +13,7 @@ class AutomobileVOEncoder(ModelEncoder):
 
 class TechnicianEncoder(ModelEncoder):
     model = Technician
-    properties = ["name", "employee_id"]
+    properties = ["name", "employee_id", "id"]
 
 
 class ServiceAppointmentEncoder(ModelEncoder):

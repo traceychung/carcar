@@ -1,14 +1,7 @@
 from django.urls import path
-from .views import (
-    list_automobiles,
-    list_sales_people,
-    show_sales_person,
-    list_customers,
-    show_customer,
-    list_sales_records,
-    show_sales_record,
+from .views import *
 
-)
+
 urlpatterns = [
     path("automobiles/", list_automobiles, name="automobiles"),
     path("salespeople/", list_sales_people, name="sales_people"),

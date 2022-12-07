@@ -88,7 +88,7 @@ def show_sales_person(request, pk):
         except SalesPerson.DoesNotExist:
             return JsonResponse(
                 {"message": "Sales person does not exist"},
-                status=404,
+                status=400,
             )
 
 @require_http_methods(["GET", "POST"])
@@ -127,7 +127,7 @@ def show_customer(request, pk):
         except Customer.DoesNotExist:
             return JsonResponse(
                 {"message": "Customer doesn't exist"},
-                status=404,
+                status=400,
             )
 
 @require_http_methods(["GET", "POST"])
@@ -180,5 +180,5 @@ def show_sales_record(request, pk):
         except SalesRecord.DoesNotExist:
             return JsonResponse(
                 {"message": "Sales record doesn't exist"},
-                status=404,
+                status=400,
             )

@@ -22,7 +22,6 @@ def get_automobiles():
             vin = automobile["vin"],
         )
 
-
 def poll():
     while True:
         print('Sales poller polling for data')
@@ -35,4 +34,3 @@ def poll():
 
 if __name__ == "__main__":
     poll()
-

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class ManufacturerList extends React.Component {
   constructor(props) {
@@ -36,9 +36,9 @@ class ManufacturerList extends React.Component {
           </tbody>
         </table>
         <div className="d-grid gap-2 d-sm-flex justify-content-sm-left">
-          <NavLink to="new" className="btn btn-primary btn-lg px-4 gap-3">
+          <Link to="new" className="btn btn-primary btn-lg px-4 gap-3">
             Add a manufacturer
-          </NavLink>
+          </Link>
         </div>
       </>
     );
@@ -46,4 +46,3 @@ class ManufacturerList extends React.Component {
 }
 
 export default ManufacturerList;
-

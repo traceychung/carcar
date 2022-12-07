@@ -9,14 +9,14 @@ import AutoForm from './AutoForm';
 import AutoList from './AutoList';
 
 function App(props) {
-  
+
   return (
     <BrowserRouter>
       <Nav />
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="manufacturer" element={<ManufacturerList manufacturers={props.manufacturers} />} />
+          <Route path="manufacturer" element={<ManufacturerList manufacturers={props.manufacturers}/>} />
           <Route path="manufacturer/new" element={<ManufacturerForm />} />
           <Route path="vehicle/new" element={<VehicleModelForm />} />
           <Route path="vehicle/" element={<VehicleModelList />} />

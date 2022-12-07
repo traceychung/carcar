@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const VehicleModelList = () => {
+function VehicleModelList() {
 	const [models, setModels] = useState([]);
 
 	useEffect(() => {

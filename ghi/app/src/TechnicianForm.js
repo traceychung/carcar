@@ -66,7 +66,7 @@ function TechnicianForm() {
                         <div
                             className="alert alert-success mb-0 p-4 mt-4"
                             id="success-message">
-                            Your model has been created
+                            Your technician has been created
                         </div>
                     )}
                 </div>

@@ -117,9 +117,9 @@ The `Service` front end has four components - `TechnicianForm`, `AppointmentForm
 
 ## Sales microservice
 
-The `Sales` microservice uses port 8090 and has four models: the`SalesPerson` model, the `AutomobileVO` model, `SalesRecord` and the `Customer` model. The `SalesRecord`model has a “sales_person”, and “customer”,  property which uses the `SalesPerson` and `Customer` model as a foreign key.
+The `Sales` microservice uses RESTFUL API methods and port 8090 and has four models: the`SalesPerson` model, the `AutomobileVO` model, `SalesRecord` and the `Customer` model. The `SalesRecord`model has a “sales_person”, and “customer”,  property which uses the `SalesPerson` and `Customer` model as a foreign key.
 
-The `Sales` microservices uses RESTFUL APIs to get a list of appointments, create a new appointment, as well as delete, update and show details for a specific appointment. The URLs for the `Sales` microservice are shown below.
+The sales microservice polls through the model `AutomobileVO` to get data from the monolith(inventory API). The poller provides the vin, which can be used to determine what cars can be sold if available.
 
 **Sales Record**
 

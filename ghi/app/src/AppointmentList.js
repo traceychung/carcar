@@ -85,7 +85,6 @@ function AppointmentList() {
           </thead>
           <tbody>
             {appointments.map((appointment) => {
-              // const date = {Date({appointment.appointment_time}).toLocaleDateString()};
               if (!appointment.completed)
                 return (
                   <tr key={appointment.id}>

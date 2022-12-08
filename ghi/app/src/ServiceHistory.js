@@ -19,7 +19,7 @@ function ServiceHistory() {
         fetchAppointments();
         }, []);
 
-    const searchItems = (searchValue) => {
+    const searchAppointments = (searchValue) => {
         setSearchInput(searchValue)
         if (searchInput !== '') {
             const filteredData = appointments.filter((appointment) => {
@@ -41,11 +41,11 @@ function ServiceHistory() {
             aria-describedby="search-addon"
             placeholder="Search by VIN here"
             aria-label="Search"
-            onChange={(e) => searchItems(e.target.value)}
+            onChange={(e) => searchAppointments(e.target.value)}
             value={searchInput} />
             <button type="button"
             className="btn btn-outline-primary"
-            onClick={(e) => searchItems(e.target.value)}
+            onClick={(e) => searchAppointments(e.target.value)}
             value={searchInput}>Search</button>
         </div>
 

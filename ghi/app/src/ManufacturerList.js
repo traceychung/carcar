@@ -17,7 +17,7 @@ class ManufacturerList extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="container mt-3">
         <h1>Manufacturers</h1>
         <table className="table table-striped">
           <thead>
@@ -40,7 +40,7 @@ class ManufacturerList extends React.Component {
             Add a manufacturer
           </Link>
         </div>
-      </>
+      </div>
     );
   }
 }

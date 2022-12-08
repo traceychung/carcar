@@ -24,7 +24,7 @@ class AutoList extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="container mt-3">
         <h1>Available automobile inventory</h1>
         <table className="table table-striped">
           <thead>
@@ -59,7 +59,7 @@ class AutoList extends React.Component {
             Add a automobile to inventory
           </Link>
         </div>
-      </>
+      </div>
     );
   }
 }

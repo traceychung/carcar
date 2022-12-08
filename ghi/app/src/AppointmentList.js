@@ -18,9 +18,56 @@ function AppointmentList() {
 		fetchAppointments();
 	}, []);
 
+  const deleteAppointment = (id) => async () => {
+    try {
+      const url = `http://localhost:8080/api/appointments/${id}/`;
+      const deleteResponse = await fetch(url,
+          {
+              method: "delete"
+          }
+      );
+
+      if (deleteResponse.ok) {
+        const reloadUrl = "http://localhost:8080/api/appointments/";
+        const reloadResponse = await fetch(reloadUrl);
+        const newAppointment = await reloadResponse.json();
+        setAppointments(newAppointment.appointments);
+      }
+
+    }
+    catch (err) {
+
+    }
+  };
+
+  const completeAppointment = (id) => async () => {
+    try {
+      const url = `http://localhost:8080/api/appointments/${id}/`;
+      const completeResponse = await fetch(url,
+          {
+              method: "put",
+              body: JSON.stringify({completed: true}),
+              headers: {
+                "Content-Type": "application/json",
+              }
+          }
+      );
+
+      if (completeResponse.ok) {
+        const reloadUrl = "http://localhost:8080/api/appointments/";
+        const reloadResponse = await fetch(reloadUrl);
+        const newAppointment = await reloadResponse.json();
+        setAppointments(newAppointment.appointments);
+      }
+
+    }
+    catch (err) {
+
+    }
+  };
+
 	return (
-        <>
-        <></>
+        <div className="container mt-3">
         <h1>Service Appointments</h1>
         <table className="table table-striped">
           <thead>
@@ -31,10 +78,13 @@ function AppointmentList() {
               <th>Technician</th>
               <th>Reason</th>
               <th>VIP</th>
+              <th>Cancel</th>
+              <th>Completed</th>
             </tr>
           </thead>
           <tbody>
             {appointments.map((appointment) => {
+              if (!appointment.completed)
                 return (
                   <tr key={appointment.id}>
                     <td>{appointment.vin}</td>
@@ -42,8 +92,9 @@ function AppointmentList() {
                     <td>{appointment.appointment_time}</td>
                     <td>{appointment.technician.name}</td>
                     <td>{appointment.reason}</td>
-                    <td>{appointment.vip}</td>
-                    <td></td>
+                    <td>{appointment.vip.toString()}</td>
+                    <td className="align-middle"><button onClick={deleteAppointment(appointment.id)} className="btn btn-danger">Cancel</button></td>
+                    <td><button className="btn btn-success" onClick={completeAppointment(appointment.id)}>Completed</button></td>
                   </tr>
                 );
               })}
@@ -56,28 +107,7 @@ function AppointmentList() {
             Add a new appointment
           </Link>
         </div>
-      </>
-		// <div className="container mt-3">
-		// 	<div className="row row-cols-1 row-cols-md-2 g-4 t-5 m-2">
-		// 		{appointments.map((appointment) => {
-		// 			return (
-		// 				<div key={appointment.id} className="col-lg-4 d-flex align-items-stretch">
-		// 					<div className="model-list card-body mb-3 shadow">
-		// 						<h5 className="card-header">{appointment.manufacturer.name}</h5>
-		// 						<div className="card-body">
-		// 							<h5 className="card-title">{model.name}</h5>
-		// 							<img
-		// 								src={model.picture_url}
-		// 								className="card-img-top"
-		// 								alt={model.name}
-		// 							/>
-		// 						</div>
-		// 					</div>
-		// 				</div>
-		// 			);
-		// 		})}
-		// 	</div>
-		// </div>
+      </div>
 	);
 };
 

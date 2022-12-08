@@ -91,3 +91,46 @@ def list_appointments(request):
                     "Error": "Technician does not exist"
                     },
                     status=400)
+
+@require_http_methods(["GET", "PUT", "DELETE"])
+def show_appointments(request, pk):
+    if request.method == "GET":
+        try:
+            appointment = ServiceAppointment.objects.get(id=pk)
+            return JsonResponse(
+                appointment,
+                encoder=ServiceAppointmentEncoder,
+                safe=False,
+            )
+        except ServiceAppointment.DoesNotExist:
+            return JsonResponse(
+                {"message": "Appointment does not exist"},
+                status=400,
+            )
+    elif request.method == "DELETE":
+        try:
+            count, _ = ServiceAppointment.objects.filter(id=pk).delete()
+            return JsonResponse(
+                {"deleted": count > 0}
+            )
+        except ServiceAppointment.DoesNotExist:
+            return JsonResponse(
+                {"message": "Appointment does not exist"},
+                status=400,
+            )
+    else:
+        try:
+            content = json.loads(request.body)
+            ServiceAppointment.objects.filter(id=pk).update(**content)
+            appointment = ServiceAppointment.objects.get(id=pk)
+            return JsonResponse(
+                appointment,
+                encoder=ServiceAppointmentEncoder,
+                safe=False
+            )
+        except ServiceAppointment.DoesNotExist:
+            return JsonResponse(
+                {"message": "Appointment does not exist"},
+                status=400,
+            )
+

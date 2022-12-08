@@ -75,6 +75,7 @@ function AppointmentList() {
               <th>VIN</th>
               <th>Customer Name</th>
               <th>Date</th>
+              <th>Time</th>
               <th>Technician</th>
               <th>Reason</th>
               <th>VIP</th>
@@ -84,12 +85,14 @@ function AppointmentList() {
           </thead>
           <tbody>
             {appointments.map((appointment) => {
+              // const date = {Date({appointment.appointment_time}).toLocaleDateString()};
               if (!appointment.completed)
                 return (
                   <tr key={appointment.id}>
                     <td>{appointment.vin}</td>
                     <td>{appointment.customer_name}</td>
-                    <td>{appointment.appointment_time}</td>
+                    <td>{new Date(appointment.appointment_time).toLocaleDateString()}</td>
+                    <td>{new Date(appointment.appointment_time).toLocaleTimeString([],{hour:"2-digit", minute:"2-digit"})}</td>
                     <td>{appointment.technician.name}</td>
                     <td>{appointment.reason}</td>
                     <td>{appointment.vip.toString()}</td>

@@ -21,7 +21,7 @@ class Technician(models.Model):
         ordering = ["name"]
 
 class ServiceAppointment(models.Model):
-    vin = models.CharField(max_length=17,unique=True)
+    vin = models.CharField(max_length=17)
     customer_name = models.CharField(max_length=100)
     appointment_time = models.DateTimeField()
     reason = models.CharField(max_length=250)

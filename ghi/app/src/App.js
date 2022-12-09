@@ -25,21 +25,21 @@ function App(props) {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="manufacturer" element={<ManufacturerList />} />
+          <Route path="manufacturers" element={<ManufacturerList />} />
           <Route path="manufacturer/new" element={<ManufacturerForm />} />
-          <Route path="vehicle/new" element={<VehicleModelForm />} />
-          <Route path="vehicle/" element={<VehicleModelList />} />
-          <Route path="automobiles/new" element={<AutoForm />} />
+          <Route path="model/new" element={<VehicleModelForm />} />
+          <Route path="models" element={<VehicleModelList />} />
+          <Route path="automobile/new" element={<AutoForm />} />
           <Route path="automobiles" element={<AutoList />} />
           <Route path="technician/new" element={<TechnicianForm />} />
           <Route path="appointment/new" element={<AppointmentForm />} />
-          <Route path="appointment" element={<AppointmentList />} />
+          <Route path="appointments" element={<AppointmentList />} />
           <Route path="appointment/history" element={<ServiceHistory />} />
           <Route path="sales/list" element={<SalesList />} />
           <Route path="sales/history" element={<SalesHistory />} />
-          <Route path="/salesemployee/new" element={<SalesEmployeeForm />} />
-          <Route path="/sales/new" element={<SalesRecordForm />} />
-          <Route path="/customer/new" element={<CustomerForm />} />
+          <Route path="salesemployee/new" element={<SalesEmployeeForm />} />
+          <Route path="sales/new" element={<SalesRecordForm />} />
+          <Route path="customer/new" element={<CustomerForm />} />
         </Routes>
       </div>
     </BrowserRouter>

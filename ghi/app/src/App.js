@@ -7,13 +7,8 @@ import ManufacturerList from './ManufacturerList';
 import VehicleModelList from './VehicleModelsList';
 import AutoForm from './AutoForm';
 import AutoList from './AutoList';
-import TechnicianForm from './TechnicianForm';
-import AppointmentForm from './AppointmentForm';
-import AppointmentList from './AppointmentList';
-import ServiceHistory from './ServiceHistory';
 
-
-function App() {
+function App(props) {
 
   return (
     <BrowserRouter>
@@ -31,10 +26,14 @@ function App() {
           <Route path="appointment/new" element={<AppointmentForm />} />
           <Route path="appointment" element={<AppointmentList />} />
           <Route path="appointment/history" element={<ServiceHistory />} />
+          <Route path="sales/list" element={<SalesList />} />
+          <Route path="sales/history" element={<SalesHistory />} />
+          <Route path="/salesemployee/new" element={<SalesEmployeeForm />} />
+          <Route path="/sales/new" element={<SalesRecordForm />} />
+          <Route path="/customer/new" element={<CustomerForm />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
-
 export default App;

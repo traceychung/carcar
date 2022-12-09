@@ -7,7 +7,6 @@ class ManufacturerForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
   }
-
   async handleSubmit(event) {
     event.preventDefault();
     const data = { ...this.state };
@@ -25,7 +24,6 @@ class ManufacturerForm extends React.Component {
       this.setState(cleared);
     }
   }
-
   handleChangeName(event) {
     this.setState({ name: event.target.value });
   }
@@ -38,16 +36,7 @@ class ManufacturerForm extends React.Component {
             <h1>Create a manufacturer</h1>
             <form onSubmit={this.handleSubmit} id="create-manufacturer-form">
               <div className="form-floating mb-3">
-                <input
-                  onChange={this.handleChangeName}
-                  value={this.state.name}
-                  placeholder="Name"
-                  required
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="form-control"
-                />
+                <input onChange={this.handleChangeName} value={this.state.name} placeholder="Name" required type="text" name="name" id="name" className="form-control"/>
                 <label htmlFor="name">Name</label>
               </div>
               <div align="left">
@@ -60,6 +49,5 @@ class ManufacturerForm extends React.Component {
     );
   }
 }
-
 export default ManufacturerForm;
 

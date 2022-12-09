@@ -10,14 +10,12 @@ class AutoForm extends React.Component {
       vin: '',
       models: [],
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
     this.handleVINChange = this.handleVINChange.bind(this);
     this.handleModelChange = this.handleModelChange.bind(this);
   }
-
   async componentDidMount() {
     const url = 'http://localhost:8100/api/models/';
     const response = await fetch(url);
@@ -26,14 +24,12 @@ class AutoForm extends React.Component {
       this.setState({ models: data.models });
     }
   }
-
   async handleSubmit(event) {
     event.preventDefault();
     const data = {...this.state};
     delete data.models;
     data["model_id"] = data["model"]
     delete data.model;
-
     const url = 'http://localhost:8100/api/automobiles/';
     const fetchOptions = {
       method: 'post',
@@ -42,7 +38,6 @@ class AutoForm extends React.Component {
         'Content-Type': 'application/json',
       }
     };
-
     const automobileResponse = await fetch(url, fetchOptions);
     if (automobileResponse.ok) {
       this.setState({
@@ -53,22 +48,18 @@ class AutoForm extends React.Component {
       });
     }
   }
-
   handleColorChange(event) {
     const value = event.target.value;
     this.setState({ color: value });
   }
-
   handleYearChange(event) {
     const value = event.target.value;
     this.setState({ year: value });
   }
-
   handleVINChange(event) {
     const value = event.target.value;
     this.setState({ vin: value });
   }
-
   handleModelChange(event) {
     const value = event.target.value;
     this.setState({ model: value });
@@ -113,8 +104,4 @@ class AutoForm extends React.Component {
     );
   }
 }
-
-
-
-
 export default AutoForm;

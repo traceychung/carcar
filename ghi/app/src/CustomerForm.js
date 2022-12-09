@@ -1,0 +1,59 @@
+import { useEffect, useState } from "react";
+
+function CustomerForm() {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const data = { name, phone, address };
+        data.phone_number = data.phone;
+        delete data.phone;
+        const salesPersonUrl = "http://localhost:8090/api/customers/";
+        const fetchConfig = {
+            method: "post",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const response = await fetch(salesPersonUrl, fetchConfig);
+        if (response.ok) {
+            setName("");
+            setPhone("");
+            setAddress("");
+        }
+    };
+
+    return (
+        <div className="row">
+            <div className="offset-3 col-6">
+                <div className="shadow p-4 mt-4">
+                    <h1>New Customer</h1>
+                    <form id="create-new-customer-form" onSubmit={handleSubmit}>
+                        <div className="form-floating mb-3">
+                            <input onChange={(e) => setName(e.target.value)} placeholder="Name" required type="text" name="name" id="name" className="form-control" value={name}/>
+                            <label htmlFor="name">Name</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input onChange={(e) => setAddress(e.target.value)} placeholder="Address" required type="text" name="address" id="address" className="form-control" value={address}/>
+                            <label htmlFor="address">Address</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input onChange={(e) => setPhone(e.target.value)} placeholder="Phone Number" required type="text" name="phone_number" id="phone_number" className="form-control" value={phone}/>
+                            <label htmlFor="phone_number">Phone Number</label>
+                        </div>
+                        <button className="btn btn-primary">Create</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
+};
+export default CustomerForm;
+
+
+
+
+
+

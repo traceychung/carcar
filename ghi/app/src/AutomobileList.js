@@ -13,7 +13,6 @@ class AutoList extends React.Component {
       automobiles: [],
     };
   }
-
   async componentDidMount() {
     const response = await fetch("http://localhost:8100/api/automobiles/");
     if (response.ok) {
@@ -63,5 +62,4 @@ class AutoList extends React.Component {
     );
   }
 }
-
 export default AutoList;

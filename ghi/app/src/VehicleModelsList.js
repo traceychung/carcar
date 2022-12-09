@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function VehicleModelList() {
 	const [models, setModels] = useState([]);
-
 	useEffect(() => {
 		const fetchModels = async () => {
 			const url = "http://localhost:8100/api/models/";
@@ -41,9 +40,4 @@ function VehicleModelList() {
 		</div>
 	);
 };
-
-
-
-
-
 export default VehicleModelList;

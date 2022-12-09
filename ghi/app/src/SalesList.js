@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function SalesList() {
 	const [salesList, setSalesList] = useState([]);
 	useEffect(() => {
-		async function fetchSalesList() {
+		async function getSalesList() {
 			const url = "http://localhost:8090/api/salesrecords/";
 			const response = await fetch(url);
 			if (response.ok) {
@@ -11,7 +11,7 @@ function SalesList() {
 				setSalesList(data.sales_records)
 			}
 		}
-		fetchSalesList();
+		getSalesList();
 	}, []);
 
 	return (
@@ -41,7 +41,5 @@ function SalesList() {
 		</table>
 	);
 };
-
-
 export default SalesList;
 

@@ -6,7 +6,6 @@ class ManufacturerList extends React.Component {
     super(props);
     this.state = { manufacturers: [] };
   }
-
   async componentDidMount() {
     const response = await fetch("http://localhost:8100/api/manufacturers/");
     if (response.ok) {
@@ -44,6 +43,5 @@ class ManufacturerList extends React.Component {
     );
   }
 }
-
 export default ManufacturerList;
 

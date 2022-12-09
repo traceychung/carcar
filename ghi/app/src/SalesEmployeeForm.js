@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function SalesEmployeeForm() {
 	const [name, setName] = useState("");
@@ -8,7 +8,6 @@ function SalesEmployeeForm() {
 		const data = { name, employeeNumber };
 		data.employee_number = data.employeeNumber;
 		delete data.employeeNumber;
-
 		const salesPersonUrl = "http://localhost:8090/api/salespeople/";
 		const fetchConfig = {
 			method: "post",
@@ -19,7 +18,6 @@ function SalesEmployeeForm() {
 		};
 		const response = await fetch(salesPersonUrl, fetchConfig);
 		if (response.ok) {
-			const newSalesPerson = await response.json();
 			setName("");
 			setEmployeeNumber("");
 		} 
@@ -46,5 +44,4 @@ function SalesEmployeeForm() {
 		</div>
 	);
 };
-
 export default SalesEmployeeForm;

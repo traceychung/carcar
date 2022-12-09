@@ -28,11 +28,7 @@ function SalesHistory() {
     return (
         <div>
             <h1 className="mt-4 mb-4">Employee Sales History</h1>
-            <select
-                onChange={handleChange}
-                id="sales-person-sales-history"
-                name="Sales Person"
-                className="form-select mb-3">
+            <select onChange={handleChange} id="sales-person-sales-history" name="Sales Person" className="form-select mb-3">
                 <option value="">Choose a Sales Employee</option>
                 {salesPeople.map((salesPerson) => {
                     return (
@@ -67,6 +63,4 @@ function SalesHistory() {
         </div>
     );
 }
-
-
 export default SalesHistory;

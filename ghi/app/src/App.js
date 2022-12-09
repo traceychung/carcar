@@ -5,14 +5,15 @@ import ManufacturerForm from './ManufacturerForm';
 import VehicleModelForm from './VehicleModelForm';
 import ManufacturerList from './ManufacturerList';
 import VehicleModelList from './VehicleModelsList';
-import AutoForm from './AutoForm';
-import AutoList from './AutoList';
+import AutoForm from './AutomobileForm';
+import AutoList from './AutomobileList';
 import SalesList from './SalesList';
 import SalesHistory from './SalesHistory';
 import SalesEmployeeForm from './SalesEmployeeForm';
+import SalesRecordForm from './SalesForm';
+import CustomerForm from './CustomerForm';
 
 function App() {
-  
   return (
     <BrowserRouter>
       <Nav />
@@ -28,10 +29,11 @@ function App() {
           <Route path="sales/list" element={<SalesList />} />
           <Route path="sales/history" element={<SalesHistory />} />
           <Route path="/salesemployee/new" element={<SalesEmployeeForm />} />
+          <Route path="/sales/new" element={<SalesRecordForm />} />
+          <Route path="/customer/new" element={<CustomerForm />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
-
 export default App;

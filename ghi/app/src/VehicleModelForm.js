@@ -22,7 +22,6 @@ function VehicleModelForm() {
         const picture_url = pictureUrl;
         const manufacturer_id = selectedManufacturer;
         const data = { name, picture_url, manufacturer_id };
-
         const modelUrl = "http://localhost:8100/api/models/";
         const fetchConfig = {
             method: "post",
@@ -47,27 +46,11 @@ function VehicleModelForm() {
                     <h1 className="text-center">Create a New Model</h1>
                     <form id="create-model-form" onSubmit={handleSubmit}>
                         <div className="form-floating mb-3">
-                            <input
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Model Name"
-                                required
-                                type="text"
-                                name="name"
-                                id="name"
-                                className="form-control"
-                            />
+                            <input onChange={(e) => setName(e.target.value)} placeholder="Model Name" required type="text" name="name" id="name" className="form-control"/>
                             <label htmlFor="name">Model Name</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input
-                                onChange={(e) => setPictureUrl(e.target.value)}
-                                placeholder="pictureUrl"
-                                required
-                                type="text"
-                                name="pictureUrl"
-                                id="pictureUrl"
-                                className="form-control"
-                            />
+                            <input onChange={(e) => setPictureUrl(e.target.value)} placeholder="pictureUrl" required type="text" name="pictureUrl" id="pictureUrl" className="form-control"/>
                             <label htmlFor="pictureUrl">Picture Url</label>
                         </div>
                         <div className="mb-3">
@@ -91,9 +74,5 @@ function VehicleModelForm() {
         </div>
     );
 };
-
-
-
-
 export default VehicleModelForm;
 

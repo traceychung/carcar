@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const VehicleModelForm = () => {
+function VehicleModelForm() {
     const [name, setName] = useState("");
     const [pictureUrl, setPictureUrl] = useState("");
     const [manufacturers, setManufacturers] = useState([]);
@@ -114,4 +114,3 @@ const VehicleModelForm = () => {
 
 
 export default VehicleModelForm;
-

@@ -21,7 +21,7 @@ winget install Docker.DockerDesktop
 
 To start the application, run the following commands:
 ```
-docker volume create pgdata
+docker volume create beta-data
 docker-compose build
 docker-compose up
 ```

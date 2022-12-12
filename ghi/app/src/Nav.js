@@ -18,7 +18,7 @@ function Nav() {
                 <NavLink className="dropdown-item" to="manufacturer/new">Add a manufacturer</NavLink>
                 <NavLink className="dropdown-item" to="model/new">Add a model</NavLink>
                 <NavLink className="dropdown-item" to="automobile/new">Add an automobile</NavLink>
-                <div class="dropdown-divider"></div>
+                <div className="dropdown-divider"></div>
                 <NavLink className="dropdown-item" to="manufacturers">List of manufacturers</NavLink>
                 <NavLink className="dropdown-item" to="models">List of models</NavLink>
                 <NavLink className="dropdown-item" to="automobiles">List of automobiles</NavLink>
@@ -31,7 +31,7 @@ function Nav() {
               <div className="dropdown-menu">
                 <NavLink className="dropdown-item" to="technician/new">Add a technician</NavLink>
                 <NavLink className="dropdown-item" to="appointment/new">Add an appointment</NavLink>
-                <div class="dropdown-divider"></div>
+                <div className="dropdown-divider"></div>
                 <NavLink className="dropdown-item" to="/appointments">List of appointments</NavLink>
                 <NavLink className="dropdown-item" to="/appointment/history">Service History by VIN</NavLink>
               </div>
@@ -44,7 +44,7 @@ function Nav() {
                 <NavLink className="dropdown-item" to="salesemployee/new">Add a salesperson</NavLink>
                 <NavLink className="dropdown-item" to="customer/new">Add an customer</NavLink>
                 <NavLink className="dropdown-item" to="sales/new">Create a sale</NavLink>
-                <div class="dropdown-divider"></div>
+                <div className="dropdown-divider"></div>
                 <NavLink className="dropdown-item" to="sales/list">List of sales</NavLink>
                 <NavLink className="dropdown-item" to="sales/history">Sales History</NavLink>
               </div>

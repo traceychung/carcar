@@ -33,7 +33,7 @@ function ServiceHistory() {
     }
 
     return (
-        <div className="container mt-3">
+        <div className="container mt-4">
         <div className="input-group">
             <input
             type="search"
@@ -49,17 +49,18 @@ function ServiceHistory() {
             value={searchInput}>Search</button>
         </div>
 
-        <h1>Service Appointments</h1>
+        <div className='mt-3'>
+        <h1>Service History</h1>
                 <table className="table table-striped">
                 <thead>
                     <tr>
-                    <th>VIN</th>
-                    <th>Customer Name</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Technician</th>
-                    <th>Reason</th>
-                    <th>VIP</th>
+                        <th>VIP</th>
+                        <th>Customer Name</th>
+                        <th>VIN</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Technician</th>
+                        <th>Reason</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,13 +68,13 @@ function ServiceHistory() {
                         filteredResults.map((appointment) => {
                             return (
                                 <tr key={appointment.id}>
-                                    <td>{appointment.vin}</td>
+                                    <td><img width="25" height="25" alt="" src={appointment.vip ? 'https://cdn-icons-png.flaticon.com/512/2377/2377810.png' : 'https://cdn-icons-png.flaticon.com/512/2377/2377878.png'} /></td>
                                     <td>{appointment.customer_name}</td>
+                                    <td>{appointment.vin}</td>
                                     <td>{new Date(appointment.appointment_time).toLocaleDateString()}</td>
                                     <td>{new Date(appointment.appointment_time).toLocaleTimeString([],{hour:"2-digit", minute:"2-digit"})}</td>
                                     <td>{appointment.technician.name}</td>
                                     <td>{appointment.reason}</td>
-                                    <td>{appointment.vip.toString()}</td>
                                 </tr>
                             );
                         })
@@ -81,19 +82,20 @@ function ServiceHistory() {
                         appointments.map((appointment) => {
                             return (
                                 <tr key={appointment.id}>
-                                    <td>{appointment.vin}</td>
+                                    <td><img width="25" height="25" alt="" src={appointment.vip ? 'https://cdn-icons-png.flaticon.com/512/2377/2377810.png' : 'https://cdn-icons-png.flaticon.com/512/2377/2377878.png'} /></td>
                                     <td>{appointment.customer_name}</td>
+                                    <td>{appointment.vin}</td>
                                     <td>{new Date(appointment.appointment_time).toLocaleDateString()}</td>
                                     <td>{new Date(appointment.appointment_time).toLocaleTimeString([],{hour:"2-digit", minute:"2-digit"})}</td>
                                     <td>{appointment.technician.name}</td>
                                     <td>{appointment.reason}</td>
-                                    <td>{appointment.vip.toString()}</td>
                                 </tr>
                             );
                         })
                     )}
                 </tbody>
                 </table>
+        </div>
         </div>
     )
 };

@@ -99,14 +99,14 @@ function AppointmentForm() {
                         <div className="form-floating mb-3">
                             <input
                                 onChange={(e) => setVin(e.target.value)}
-                                placeholder="Vin"
+                                placeholder="VIN"
                                 required
                                 type="text"
                                 name="vin"
                                 id="vin"
                                 className="form-control"
                             />
-                            <label htmlFor="vin">Vin</label>
+                            <label htmlFor="vin">VIN</label>
                         </div>
                         <div className="mb-3">
                             <select

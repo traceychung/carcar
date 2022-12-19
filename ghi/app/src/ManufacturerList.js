@@ -17,7 +17,7 @@ class ManufacturerList extends React.Component {
   render() {
     return (
       <div className="container mt-3">
-        <h1>Manufacturers</h1>
+        {/* <h1>Manufacturers</h1> */}
         <table className="table table-striped">
           <thead>
             <tr>
@@ -34,8 +34,8 @@ class ManufacturerList extends React.Component {
             })}
           </tbody>
         </table>
-        <div className="d-grid gap-2 d-sm-flex justify-content-sm-left">
-          <Link to="new" className="btn btn-primary btn-lg px-4 gap-3">
+        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <Link to="/manufacturer/new" className="btn btn-danger btn-lg px-4 gap-3">
             Add a manufacturer
           </Link>
         </div>

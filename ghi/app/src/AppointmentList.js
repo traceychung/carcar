@@ -72,13 +72,13 @@ function AppointmentList() {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>VIN</th>
+              <th>VIP</th>
               <th>Customer Name</th>
+              <th>VIN</th>
               <th>Date</th>
               <th>Time</th>
               <th>Technician</th>
               <th>Reason</th>
-              <th>VIP</th>
               <th>Cancel</th>
               <th>Completed</th>
             </tr>
@@ -88,21 +88,26 @@ function AppointmentList() {
               if (!appointment.completed)
                 return (
                   <tr key={appointment.id}>
-                    <td>{appointment.vin}</td>
+                    <td><img className="align-middle" width="25" height="25" src={appointment.vip ? 'https://cdn-icons-png.flaticon.com/512/2377/2377810.png' : 'https://cdn-icons-png.flaticon.com/512/2377/2377878.png'} /></td>
                     <td>{appointment.customer_name}</td>
+                    <td>{appointment.vin}</td>
                     <td>{new Date(appointment.appointment_time).toLocaleDateString()}</td>
                     <td>{new Date(appointment.appointment_time).toLocaleTimeString([],{hour:"2-digit", minute:"2-digit"})}</td>
                     <td>{appointment.technician.name}</td>
                     <td>{appointment.reason}</td>
-                    <td>{appointment.vip.toString()}</td>
-                    <td className="align-middle"><button onClick={deleteAppointment(appointment.id)} className="btn btn-danger">Cancel</button></td>
-                    <td><button className="btn btn-success" onClick={completeAppointment(appointment.id)}>Completed</button></td>
+                    <td className="align-middle"><button onClick={deleteAppointment(appointment.id)} className="btn btn-danger"><img width="25" height="25" src='https://cdn-icons-png.flaticon.com/128/399/399274.png'/></button></td>
+                    <td><button className="btn btn-success" onClick={completeAppointment(appointment.id)}><img width="25" height="25" src='https://cdn-icons-png.flaticon.com/512/25/25643.png'/></button></td>
                   </tr>
                 );
               })}
           </tbody>
         </table>
         <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <Link
+            to="/technician/new/"
+            className="btn btn-primary btn-lg px-4 gap-3">
+            Add a technician
+          </Link>
           <Link
             to="/appointment/new/"
             className="btn btn-primary btn-lg px-4 gap-3">

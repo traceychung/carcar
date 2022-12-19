@@ -51,7 +51,7 @@ function VehicleModelForm() {
                         </div>
                         <div className="form-floating mb-3">
                             <input onChange={(e) => setPictureUrl(e.target.value)} placeholder="pictureUrl" required type="text" name="pictureUrl" id="pictureUrl" className="form-control"/>
-                            <label htmlFor="pictureUrl">Picture Url</label>
+                            <label htmlFor="pictureUrl">Picture URL</label>
                         </div>
                         <div className="mb-3">
                             <select onChange={(e) => setSelectedManufacturer(e.target.value)} required name="manufacturer" id="manufacturer" className="form-select">

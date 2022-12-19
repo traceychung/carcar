@@ -2,7 +2,11 @@ import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
+      <a className="navbar-brand" href="/">
+        <img src="https://cdn.pixabay.com/photo/2016/09/06/04/48/checker-1648337_960_720.png" width="100" height="50" alt="" />
+      </a>
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">CarCar</NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +14,10 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item dropdown">
+            <li className="nav-item">
+                <NavLink className="nav-link" to="/inventory">Inventory</NavLink>
+            </li>
+            {/* <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Inventory
               </a>
@@ -22,10 +29,12 @@ function Nav() {
                 <NavLink className="dropdown-item" to="manufacturers">List of manufacturers</NavLink>
                 <NavLink className="dropdown-item" to="models">List of models</NavLink>
                 <NavLink className="dropdown-item" to="automobiles">List of automobiles</NavLink>
+                <div className="dropdown-divider"></div>
+                <NavLink className="dropdown-item" to="inventory">Inventory</NavLink>
               </div>
-            </li>
+            </li> */}
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
               <div className="dropdown-menu">
@@ -33,16 +42,16 @@ function Nav() {
                 <NavLink className="dropdown-item" to="appointment/new">Add an appointment</NavLink>
                 <div className="dropdown-divider"></div>
                 <NavLink className="dropdown-item" to="/appointments">List of appointments</NavLink>
-                <NavLink className="dropdown-item" to="/appointment/history">Service History by VIN</NavLink>
+                <NavLink className="dropdown-item" to="/appointment/history">Service History</NavLink>
               </div>
             </li>
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Sales
               </a>
               <div className="dropdown-menu">
                 <NavLink className="dropdown-item" to="salesemployee/new">Add a salesperson</NavLink>
-                <NavLink className="dropdown-item" to="customer/new">Add an customer</NavLink>
+                <NavLink className="dropdown-item" to="customer/new">Add a customer</NavLink>
                 <NavLink className="dropdown-item" to="sales/new">Create a sale</NavLink>
                 <div className="dropdown-divider"></div>
                 <NavLink className="dropdown-item" to="sales/list">List of sales</NavLink>

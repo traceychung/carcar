@@ -24,7 +24,7 @@ class AutoList extends React.Component {
   render() {
     return (
       <div className="container mt-3">
-        <h1>Available automobile inventory</h1>
+        {/* <h1>Available automobile inventory</h1> */}
         <table className="table table-striped">
           <thead>
             <tr>
@@ -50,12 +50,12 @@ class AutoList extends React.Component {
               })}
           </tbody>
         </table>
-        <div className="d-grid gap-2 d-sm-flex justify-content-sm-left">
+        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <Link
-            to="/automobiles/new/"
-            className="btn btn-primary btn-lg px-4 gap-3"
+            to="/automobile/new/"
+            className="btn btn-danger btn-lg px-4 gap-3"
           >
-            Add a automobile to inventory
+            Add an automobile
           </Link>
         </div>
       </div>

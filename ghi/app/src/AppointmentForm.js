@@ -33,7 +33,7 @@ function AppointmentForm() {
             technician
          };
 
-        const appointmetUrl = "http://localhost:8080/api/appointments/";
+        const appointmentUrl = "http://localhost:8080/api/appointments/";
         const fetchConfig = {
             method: "post",
             body: JSON.stringify(data),
@@ -42,7 +42,7 @@ function AppointmentForm() {
             },
         };
 
-        const response = await fetch(appointmetUrl, fetchConfig);
+        const response = await fetch(appointmentUrl, fetchConfig);
         if (response.ok) {
             event.target.reset();
             setCustomerName("");
